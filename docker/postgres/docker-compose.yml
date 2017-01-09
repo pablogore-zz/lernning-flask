@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  postgresql:
+    image: 'twomelons/postgresql:latest'
+    ports:
+      - '5432:5432'          
+    volumes:
+      - 'postgresql_data:/postgresql'
+    environment:
+      - POSTGRESQL_USERNAME=jlt
+      - POSTGRESQL_PASSWORD=secret
+      - POSTGRESQL_DATABASE=jltdb
+
+volumes:
+  postgresql_data:
+    driver: local
